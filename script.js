@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function loadGoogleDoc() {
-    fetch("http://127.0.0.1:5000/get-doc")  // Correct endpoint
+    fetch("https://ics-timeline.onrender.com/get-doc")  // Correct endpoint
     // Replace with your actual API URL
         .then(response => {
             if (!response.ok) {
