@@ -1,15 +1,19 @@
+import os
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
+from dotenv import load_dotenv  # Load environment variables
 
+# Load environment variables from .env file
+load_dotenv()
 
+# Get credentials and document ID from environment variables
+SERVICE_ACCOUNT_FILE = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+DOCUMENT_ID = os.getenv("DOCUMENT_ID")
 
-# Google API Credentials
-SERVICE_ACCOUNT_FILE = "ics-timeline-8bf43b8105c7.json"  # Path to your JSON key file
-
-# Google Doc ID
-DOCUMENT_ID = "1t8Kwum1qJLqZLu-fG2tiE7cszsKg44c2LEHjWL9AXYQ"
+if not SERVICE_ACCOUNT_FILE or not DOCUMENT_ID:
+    raise ValueError("Missing GOOGLE_APPLICATION_CREDENTIALS or DOCUMENT_ID")
 
 app = Flask(__name__)
 CORS(app)
@@ -95,5 +99,3 @@ def get_doc():
 if __name__ == "__main__":
     from os import environ
     app.run(host="0.0.0.0", port=int(environ.get("PORT", 5000)), debug=True)
-
-
