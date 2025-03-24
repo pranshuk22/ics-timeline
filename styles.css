@@ -1,0 +1,81 @@
+/* General Page Styling */
+body {
+    background-color: #007FFF; /* Azure blue background */
+    color: white; /* White text for contrast */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Centered Title */
+#title-container {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative; /* Ensures images are positioned relative to this */
+}
+
+/* Images on Left & Right */
+#image1, #image2 {
+    position: absolute;
+    top: 10px; /* Adjust vertical spacing */
+    width: auto; /* Maintain aspect ratio */
+    height: 100px; /* Set consistent height */
+}
+
+#image1 {
+    left: 20px; /* Push away from the left */
+}
+
+#image2 {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 100px; /* Set a defined width */
+    height: 100px; /* Set a defined height */
+    object-fit: contain; /* Ensures the full image fits */
+    object-position: center; /* Centers the image inside the box */
+    overflow: hidden; /* Ensures nothing spills out */
+    background-color: white; /* Helps if transparency is an issue */
+}
+
+
+/* Main Content Styling */
+#content {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 18px; /* Larger than doc */
+    line-height: 1.6;
+    text-align: justify; /* Align properly */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Bullet Points */
+ul, ol {
+    padding-left: 30px;
+}
+
+/* Links */
+a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
