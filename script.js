@@ -35,4 +35,3 @@ function loadGoogleDoc() {
             document.getElementById("doc-content").innerHTML = "<p style='color: red;'>Error loading content.</p>";
         });
 }
-
