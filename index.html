@@ -3,57 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICS Timeline 2025-26</title>
+    <title>ICS Timeline</title>
     <script defer src="script.js"></script>
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: azure;
+            font-family: "Poppins", sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
+        /* Header Styling */
         .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 80%;
-            max-width: 900px;
-            margin-bottom: 20px;
+            width: 90%;
+            max-width: 1100px;
+            background: white;
+            padding: 15px 20px;
+            margin-top: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            position: relative;
         }
+
         .header img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 10px;
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            border-radius: 8px;
         }
+
         .title {
-            text-align: center;
-            font-size: 2em;
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #0056b3;
             flex-grow: 1;
+            text-align: center;
         }
+
+        /* Dark Mode Icon */
+        .dark-mode-toggle {
+            position: absolute;
+            top: 168px; /* Moves it down */
+            right: 105px; /* Moves it farther from the edge */
+            cursor: pointer;
+            font-size: 24px;
+            color: black; /* Neutral color */
+            transition: opacity 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            opacity: 0.7;
+        }
+
+        /* Content Box */
         #doc-content {
             background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 900px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+            width: 90%;
+            max-width: 1000px;
             min-height: 300px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             overflow-wrap: break-word;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            color: #333;
             margin-top: 20px;
         }
-        p {
-            line-height: 1.6;
+
+        /* Loading Animation */
+        .loading {
+            font-size: 1.2em;
+            color: gray;
+            font-weight: bold;
+            text-align: center;
         }
-        li {
-            margin-left: 20px;
+
+        /* Dark Mode Styling */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ddd;
+        }
+
+        body.dark-mode .header {
+            background: #1e1e1e;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode .title {
+            color: #87CEFA;
+        }
+
+        body.dark-mode #doc-content {
+            background-color: #1e1e1e;
+            color: #ddd;
+            border-color: #444;
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            color: white;
         }
     </style>
 </head>
@@ -62,7 +116,11 @@
         <img src="1.png" alt="Left Image">
         <h1 class="title">Institute Counselling Service</h1>
         <img src="2.png" alt="Right Image">
+        <span class="dark-mode-toggle">🌙</span>
     </div>
-    <div id="doc-content"></div>
+
+    <div id="doc-content">
+        <p class="loading">Loading...</p>
+    </div>
 </body>
 </html>
